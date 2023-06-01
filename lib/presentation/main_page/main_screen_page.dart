@@ -7,20 +7,22 @@ import 'package:netflix/presentation/main_page/widgets/bottmnav.dart';
 import 'package:netflix/presentation/search/searchscreen.dart';
 
 class MainScreenPage extends StatelessWidget {
-   const MainScreenPage({super.key});
+    MainScreenPage({super.key});
 
-  final screens= const[HomeScreen(),
-   NewAndHotScreen(),
-   FastLaughScreen(),
-   SearchScreen(),
+  final screens=[HomeScreen(),
+   const NewAndHotScreen(),
+   const FastLaughScreen(),
+   const SearchScreen(),
    DownloadScreen()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ValueListenableBuilder(valueListenable: indexChangeNotifier, builder: (context,int newIndex, child) {
-        return screens[newIndex];
-      },),
+      body: SafeArea(
+        child: ValueListenableBuilder(valueListenable: indexChangeNotifier, builder: (context,int newIndex, child) {
+          return screens[newIndex];
+        },),
+      ),
       bottomNavigationBar:const BottomNavbar(),
     );
   }

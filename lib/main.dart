@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/presentation/main_page/main_screen_page.dart';
 
@@ -19,11 +20,13 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: bgcolor,
         useMaterial3: true,
+        fontFamily: GoogleFonts.montserrat().fontFamily,
         textTheme:const TextTheme(bodyLarge:TextStyle(color: Colors.white),
         bodyMedium: TextStyle(color: Colors.white),
+        bodySmall: TextStyle(color:Colors.white),
         )
       ),
-      home:const  MainScreenPage(),
+      home:MainScreenPage(),
     );
   }
 }
