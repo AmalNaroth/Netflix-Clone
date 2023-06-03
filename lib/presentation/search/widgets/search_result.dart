@@ -31,7 +31,7 @@ class MainMovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(decoration: BoxDecoration(
-      image: DecorationImage(image: AssetImage("assets/wednesday.jpg",
+      image: DecorationImage(image: AssetImage("assets/johnwick.jpg",
       ),
       fit: BoxFit.cover),
       borderRadius: BorderRadius.circular(8)

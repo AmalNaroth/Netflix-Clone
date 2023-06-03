@@ -21,8 +21,8 @@ class SearchScreen extends StatelessWidget {
             style:const TextStyle(color: Colors.white),
           ),
           SizedBoxH10,
-         // Expanded(child: const SearchIdleWidget()),
-          Expanded(child: SearchResultWidget())
+         // Expanded(child: SearchIdleWidget()),
+        const  Expanded(child: SearchResultWidget())
         ],),
       )),
     );

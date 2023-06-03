@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -23,7 +24,10 @@ class AppBarWidget extends StatelessWidget {
       Container(
         height: 28,
         width: 28,
-        color: Colors.blue,
+        decoration: BoxDecoration(
+           color: Colors.blue,
+          image: DecorationImage(image: AssetImage("assets/usericon.png",),)
+        ),
       ),
       sizedBoxW10
     ],);
