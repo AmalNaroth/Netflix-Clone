@@ -9,11 +9,11 @@ import 'package:netflix/presentation/search/searchscreen.dart';
 class MainScreenPage extends StatelessWidget {
     MainScreenPage({super.key});
 
-  final screens=[HomeScreen(),
-   const NewAndHotScreen(),
-   const FastLaughScreen(),
-   const SearchScreen(),
-   DownloadScreen()
+  final screens=[const HomeScreen(),
+    const NewAndHotScreen(),
+    const FastLaughScreen(),
+    const SearchScreen(),
+    DownloadScreen()
   ];
   @override
   Widget build(BuildContext context) {
