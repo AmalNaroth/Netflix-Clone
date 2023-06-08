@@ -19,7 +19,7 @@ class Trending {
 @JsonSerializable()
 class Result {
   @JsonKey(name: 'poster_path')
-  String? posterpath;
+  String? poster_path;
   @JsonKey(name: 'original_title')
   String? original_title;
   @JsonKey(name: 'overview')
@@ -30,7 +30,7 @@ class Result {
   String? release_date;
 
   Result(
-      {this.posterpath,
+      {this.poster_path,
       this.original_title,
       this.overview,
       this.backdrop_path,

@@ -1,17 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'popular_movies.g.dart';
+
+part 'popular.g.dart';
 
 @JsonSerializable()
-class PopularMovies {
+class Popular {
   List<Result>? results;
 
-  PopularMovies({this.results});
+  Popular({this.results});
 
-  factory PopularMovies.fromJson(Map<String, dynamic> json) {
-    return _$PopularMoviesFromJson(json);
+  factory Popular.fromJson(Map<String, dynamic> json) {
+    return _$PopularFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$PopularMoviesToJson(this);
+  Map<String, dynamic> toJson() => _$PopularToJson(this);
 }
 
 @JsonSerializable()

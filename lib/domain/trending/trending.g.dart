@@ -17,7 +17,7 @@ Map<String, dynamic> _$TrendingToJson(Trending instance) => <String, dynamic>{
     };
 
 Result _$ResultFromJson(Map<String, dynamic> json) => Result(
-      posterpath: json['poster_path'] as String?,
+      poster_path: json['poster_path'] as String?,
       original_title: json['original_title'] as String?,
       overview: json['overview'] as String?,
       backdrop_path: json['backdrop_path'] as String?,
@@ -25,7 +25,7 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
     );
 
 Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
-      'poster_path': instance.posterpath,
+      'poster_path': instance.poster_path,
       'original_title': instance.original_title,
       'overview': instance.overview,
       'backdrop_path': instance.backdrop_path,

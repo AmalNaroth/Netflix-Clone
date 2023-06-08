@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
-import 'package:netflix/domain/now_playing/now_playing.dart';
-import 'package:netflix/domain/popular_movies/popularfunction.dart';
-import 'package:netflix/domain/trending/trending_functions.dart';
 import 'package:netflix/presentation/widgets/main_title.dart';
 import 'package:netflix/presentation/widgets/mini_card.dart';
 
 class MainTitleCard extends StatelessWidget {
    MainTitleCard({super.key, required this.title,
-  //required this.showHomeMovies
+  required this.showHomeMovies,
+  required this.imagepath,
   });
 
   final String title;
-   //Future<List<Result>> Function() showHomeMovies;
+   Future<List<dynamic>> Function()? showHomeMovies;
+   dynamic imagepath;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,7 +26,8 @@ class MainTitleCard extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: List.generate(10,
               (index) => MainCard(index: index,
-              showHomeMovies: getPopularMovies,
+              showHomeMovies: showHomeMovies,
+              imagepath: imagepath,
             ),
           ),
         ))

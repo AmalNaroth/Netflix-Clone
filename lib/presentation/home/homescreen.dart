@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
-import 'package:netflix/domain/popular_movies/popularfunction.dart';
+import 'package:netflix/domain/popular/polular_functions.dart';
+import 'package:netflix/domain/top_rated/top_rated_functions.dart';
 import 'package:netflix/domain/trending/trending_functions.dart';
 import 'package:netflix/presentation/home/widgets/background_card.dart';
 import 'package:netflix/presentation/home/widgets/number_title_card.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return FutureBuilder(
-        future: getPopularMovies(),
+       // future: getPopularMovies(),
         builder: (context, snapshot) {
           return Scaffold(
             body: ValueListenableBuilder(
@@ -39,17 +40,27 @@ class HomeScreen extends StatelessWidget {
                         ListView(
                           children:  [
                             BackgroundCard(),
-                            MainTitleCard(title: "Relesed in the Past Year",),
+                             MainTitleCard(title: "Relesed in the Past Year",
+                             showHomeMovies: getImagePopular,
+                             imagepath:"posterPath"),
                             MainTitleCard(
                               title: "Trending Now",
+                              showHomeMovies: getImageTrending,
+                              imagepath: "poster_path",
                             ),
                             NumberTitleCard(),
                             MainTitleCard(
                               title: "Tense Dramas",
+                              showHomeMovies:getImageTopRated ,
+                              imagepath: "posterPath",
                             ),
                             MainTitleCard(
                               title: "South Indian Cinemas",
+                              showHomeMovies: getImagePopular,
+                              imagepath: "posterPath",
+
                             ),
+
                           ],
                         ),
                         ScrollNotifier.value == true
