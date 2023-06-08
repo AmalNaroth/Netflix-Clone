@@ -20,7 +20,7 @@ class DownloadScreen extends StatelessWidget {
               appBarTitle: "Downloads",
             )),
         body: ListView.separated(
-          //padding: EdgeInsets.symmetric(10),
+            //padding: EdgeInsets.symmetric(10),
             itemBuilder: (context, index) => widgetList[index],
             separatorBuilder: (context, index) => sizedBoxW10,
             itemCount: widgetList.length));
@@ -58,7 +58,9 @@ class SectionOne extends StatelessWidget {
     final Size MediaSize = MediaQuery.of(context).size;
     return Column(
       children: [
-        SizedBox(height: 25,),
+        SizedBox(
+          height: 25,
+        ),
         const Text(
           "Introducing Downloads for you",
           style: TextStyle(
@@ -84,20 +86,20 @@ class SectionOne extends StatelessWidget {
               DownloadsImageWidgets(
                 imageList: imageList[2],
                 MediaSize: Size(MediaSize.width * 0.35, MediaSize.width * 0.55),
-                imageMargin: const EdgeInsets.only(left: 170,top: 50),
+                imageMargin: const EdgeInsets.only(left: 170, top: 50),
                 imageAngle: 25,
               ),
               DownloadsImageWidgets(
                 imageList: imageList[0],
                 MediaSize: Size(MediaSize.width * 0.35, MediaSize.width * 0.55),
-                imageMargin: const EdgeInsets.only(right: 170,top: 50),
+                imageMargin: const EdgeInsets.only(right: 170, top: 50),
                 imageAngle: -25,
               ),
               DownloadsImageWidgets(
                   imageList: imageList[1],
                   MediaSize:
                       Size(MediaSize.width * 0.42, MediaSize.width * 0.62),
-                  imageMargin: const EdgeInsets.only(bottom: 35,top: 50))
+                  imageMargin: const EdgeInsets.only(bottom: 35, top: 50))
             ],
           ),
         ),
@@ -170,7 +172,7 @@ class DownloadsImageWidgets extends StatelessWidget {
       child: Transform.rotate(
         angle: imageAngle * pi / 180,
         child: Container(
-         //margin: imageMargin,
+          //margin: imageMargin,
           width: MediaSize.width,
           height: MediaSize.height,
           decoration: BoxDecoration(

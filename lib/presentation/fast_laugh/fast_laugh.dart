@@ -9,9 +9,11 @@ class FastLaughScreen extends StatelessWidget {
       body: SafeArea(
         child: PageView(
           scrollDirection: Axis.vertical,
-          children:List.generate(10, (index){
-            return VideoListItem(index: index,);
-          } ),
+          children: List.generate(10, (index) {
+            return VideoListItem(
+              index: index,
+            );
+          }),
         ),
       ),
     );

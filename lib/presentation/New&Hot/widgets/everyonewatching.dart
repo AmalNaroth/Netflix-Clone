@@ -14,25 +14,41 @@ class EveryOnesWatchingWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      SizedBoxH10,
-      Text("Friends"),
-           SizedBoxH10,
-           Text("Landing the lead in the school musical is a dream come true jodi, until the pressure sens her confidence -- and her relationship -- in to a tail spin"),
-           SizedBoxH50,
-           VideoWidget(),
-           SizedBoxH10,
-           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-             CustomButton(icon: CupertinoIcons.share, title:"Share",fontsize: 16,size: 25,),
-                sizedBoxW10,
-                CustomButton(icon: Icons.add, title: "My List",fontsize: 16,size: 25,),
-                sizedBoxW10,
-                 CustomButton(icon: CupertinoIcons.play, title: "Play",fontsize: 16,size: 25,),
-                sizedBoxW10
-
-           ],)
-
-    ],);
+        SizedBoxH10,
+        Text("Friends"),
+        SizedBoxH10,
+        Text(
+            "Landing the lead in the school musical is a dream come true jodi, until the pressure sens her confidence -- and her relationship -- in to a tail spin"),
+        SizedBoxH50,
+        VideoWidget(),
+        SizedBoxH10,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            CustomButton(
+              icon: CupertinoIcons.share,
+              title: "Share",
+              fontsize: 16,
+              size: 25,
+            ),
+            sizedBoxW10,
+            CustomButton(
+              icon: Icons.add,
+              title: "My List",
+              fontsize: 16,
+              size: 25,
+            ),
+            sizedBoxW10,
+            CustomButton(
+              icon: CupertinoIcons.play,
+              title: "Play",
+              fontsize: 16,
+              size: 25,
+            ),
+            sizedBoxW10
+          ],
+        )
+      ],
+    );
   }
 }

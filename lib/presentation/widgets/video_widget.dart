@@ -11,12 +11,16 @@ class VideoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image(image: AssetImage("assets/thelastkindom.jpg"),fit: BoxFit.cover,),
+        Image(
+          image: AssetImage("assets/thelastkindom.jpg"),
+          fit: BoxFit.cover,
+        ),
         Positioned(
           bottom: 10,
           right: 10,
-          child: CircleAvatar(child: Icon(CupertinoIcons.volume_off,color: kwhite),
-          backgroundColor: kbalck.withOpacity(0.8),
+          child: CircleAvatar(
+            child: Icon(CupertinoIcons.volume_off, color: kwhite),
+            backgroundColor: kbalck.withOpacity(0.8),
           ),
         )
       ],

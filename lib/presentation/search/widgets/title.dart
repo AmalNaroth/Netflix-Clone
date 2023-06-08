@@ -8,9 +8,9 @@ class SearchTitle extends StatelessWidget {
   final title;
   @override
   Widget build(BuildContext context) {
-    return  Text(
+    return Text(
       title,
-      style:const TextStyle(
+      style: const TextStyle(
           color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
     );
   }

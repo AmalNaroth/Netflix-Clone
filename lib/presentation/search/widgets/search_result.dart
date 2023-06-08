@@ -10,16 +10,17 @@ class SearchResultWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SearchTitle(title: "Movie & Tv"),
-        Expanded(child: GridView.count(
-          shrinkWrap: true,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          crossAxisCount: 3,
-          childAspectRatio: 1/1.4,
-          children: List.generate(20, (index) {
-            return MainMovieCard();
-          } )
-        ),)
+        Expanded(
+          child: GridView.count(
+              shrinkWrap: true,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              crossAxisCount: 3,
+              childAspectRatio: 1 / 1.4,
+              children: List.generate(20, (index) {
+                return MainMovieCard();
+              })),
+        )
       ],
     );
   }
@@ -30,11 +31,14 @@ class MainMovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(decoration: BoxDecoration(
-      image: DecorationImage(image: AssetImage("assets/johnwick.jpg",
-      ),
-      fit: BoxFit.cover),
-      borderRadius: BorderRadius.circular(8)
-    ),);
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                "assets/johnwick.jpg",
+              ),
+              fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8)),
+    );
   }
 }

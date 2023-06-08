@@ -14,16 +14,18 @@ class NumberTitleCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBoxH10,
-         const MainTitle(title:"Top 10 TV Shows in India Today"),
+        const MainTitle(title: "Top 10 TV Shows in India Today"),
         SizedBoxH10,
-       LimitedBox(
-        maxHeight: 200,
-         child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: 
-          List.generate(10, (index) =>  NumberCard(index: index+1),)
-         ,),
-       )
+        LimitedBox(
+          maxHeight: 200,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: List.generate(
+              10,
+              (index) => NumberCard(index: index + 1),
+            ),
+          ),
+        )
       ],
     );
   }

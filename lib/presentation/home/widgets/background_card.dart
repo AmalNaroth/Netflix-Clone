@@ -14,7 +14,7 @@ class BackgroundCard extends StatelessWidget {
       children: [
         Container(
           height: 600,
-          decoration:const BoxDecoration(
+          decoration: const BoxDecoration(
               color: Colors.red,
               image: DecorationImage(
                   fit: BoxFit.cover,
@@ -25,13 +25,13 @@ class BackgroundCard extends StatelessWidget {
           left: 0,
           right: 0,
           child: Padding(
-            padding: const EdgeInsets.only(bottom:8.0),
+            padding: const EdgeInsets.only(bottom: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomButton(icon: Icons.add,title: "My List"),
+                CustomButton(icon: Icons.add, title: "My List"),
                 _playButton(),
-                CustomButton(icon: Icons.info,title: " Info"),
+                CustomButton(icon: Icons.info, title: " Info"),
               ],
             ),
           ),
@@ -39,16 +39,23 @@ class BackgroundCard extends StatelessWidget {
       ],
     );
   }
-  
+
   TextButton _playButton() {
     return TextButton.icon(
-                          onPressed: () {},
-                          style: ButtonStyle(backgroundColor:const MaterialStatePropertyAll(Colors.white),
-                          minimumSize:const MaterialStatePropertyAll(Size(110.0, 40.0)),
-                          shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
-                          icon:const Icon(CupertinoIcons.play_fill,color: kbalck,),
-                          label:const Text("Play",style: TextStyle(color: kbalck),),
-                          );
+      onPressed: () {},
+      style: ButtonStyle(
+          backgroundColor: const MaterialStatePropertyAll(Colors.white),
+          minimumSize: const MaterialStatePropertyAll(Size(110.0, 40.0)),
+          shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
+      icon: const Icon(
+        CupertinoIcons.play_fill,
+        color: kbalck,
+      ),
+      label: const Text(
+        "Play",
+        style: TextStyle(color: kbalck),
+      ),
+    );
   }
 }
-
