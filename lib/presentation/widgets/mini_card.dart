@@ -3,6 +3,8 @@ import 'package:netflix/core/constants.dart';
 import 'package:netflix/domain/const/const.dart';
 import 'package:netflix/domain/popular_movies/popular_movies.dart';
 
+
+
 class MainCard extends StatelessWidget {
   MainCard({
     super.key,
@@ -14,7 +16,7 @@ class MainCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future:,
+        future:showHomeMovies!(),
         builder: (context, snapshot) {
           String? imagepath = snapshot.data?[index].posterPath;
           return Container(

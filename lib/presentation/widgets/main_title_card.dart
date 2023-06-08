@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/domain/now_playing/now_playing.dart';
+import 'package:netflix/domain/popular_movies/popularfunction.dart';
+import 'package:netflix/domain/trending/trending_functions.dart';
 import 'package:netflix/presentation/widgets/main_title.dart';
 import 'package:netflix/presentation/widgets/mini_card.dart';
 
@@ -25,6 +27,7 @@ class MainTitleCard extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: List.generate(10,
               (index) => MainCard(index: index,
+              showHomeMovies: getPopularMovies,
             ),
           ),
         ))
