@@ -8,7 +8,6 @@ class MainCard extends StatelessWidget {
   MainCard({
     super.key,
     required this.index, this.showHomeMovies,
-    required this.imagepath
   });
   int index;
    Future<List<dynamic>> Function()? showHomeMovies;
@@ -19,7 +18,7 @@ class MainCard extends StatelessWidget {
     return FutureBuilder(
         future:showHomeMovies!(),
         builder: (context, snapshot) {
-          String? imagepath = snapshot.data?[index].poster_path;
+          String? imagepath = snapshot.data?[index].posterPath;
           return Container(
             margin: EdgeInsets.symmetric(horizontal: 5),
             height: 250,

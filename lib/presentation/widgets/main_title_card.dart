@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/widgets/main_title.dart';
@@ -5,15 +7,14 @@ import 'package:netflix/presentation/widgets/mini_card.dart';
 
 class MainTitleCard extends StatelessWidget {
    MainTitleCard({super.key, required this.title,
-  required this.showHomeMovies,
-  required this.imagepath,
+  required this.showHomeMovies
   });
 
   final String title;
    Future<List<dynamic>> Function()? showHomeMovies;
-   dynamic imagepath;
   @override
   Widget build(BuildContext context) {
+   
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -27,7 +28,6 @@ class MainTitleCard extends StatelessWidget {
             children: List.generate(10,
               (index) => MainCard(index: index,
               showHomeMovies: showHomeMovies,
-              imagepath: imagepath,
             ),
           ),
         ))

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/domain/const/const.dart';
+import 'package:netflix/domain/toptvshows/toptvshows_functions.dart';
 import 'package:netflix/presentation/home/widgets/custom_button.dart';
 
 class BackgroundCard extends StatelessWidget {
@@ -10,33 +12,39 @@ class BackgroundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 600,
-          decoration: const BoxDecoration(
-              color: Colors.red,
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/nadaquever.jpg"))),
-        ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton(icon: Icons.add, title: "My List"),
-                _playButton(),
-                CustomButton(icon: Icons.info, title: " Info"),
-              ],
-            ),
+    return FutureBuilder(
+      future: gettoptvshows(),
+      builder: (context, snapshot) {
+        String? imagepath=snapshot.data?[19].posterPath;
+        return Stack(
+        children: [
+          Container(
+            height: 600,
+            decoration:  BoxDecoration(
+                color: Colors.red,
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage("$baseurl$imagepath"))),
           ),
-        )
-      ],
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomButton(icon: Icons.add, title: "My List"),
+                  _playButton(),
+                  CustomButton(icon: Icons.info, title: " Info"),
+                ],
+              ),
+            ),
+          )
+        ],
+      );
+      }
     );
   }
 

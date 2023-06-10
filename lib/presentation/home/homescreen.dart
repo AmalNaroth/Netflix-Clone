@@ -16,10 +16,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return FutureBuilder(
-       // future: getPopularMovies(),
-        builder: (context, snapshot) {
           return Scaffold(
             body: ValueListenableBuilder(
                 valueListenable: ScrollNotifier,
@@ -41,24 +37,19 @@ class HomeScreen extends StatelessWidget {
                           children:  [
                             BackgroundCard(),
                              MainTitleCard(title: "Relesed in the Past Year",
-                             showHomeMovies: getImagePopular,
-                             imagepath:"posterPath"),
+                             showHomeMovies: getImagePopular,),
                             MainTitleCard(
                               title: "Trending Now",
                               showHomeMovies: getImageTrending,
-                              imagepath: "poster_path",
                             ),
                             NumberTitleCard(),
                             MainTitleCard(
                               title: "Tense Dramas",
                               showHomeMovies:getImageTopRated ,
-                              imagepath: "posterPath",
                             ),
                             MainTitleCard(
                               title: "South Indian Cinemas",
                               showHomeMovies: getImagePopular,
-                              imagepath: "posterPath",
-
                             ),
 
                           ],
@@ -123,6 +114,5 @@ class HomeScreen extends StatelessWidget {
                   );
                 }),
           );
-        });
+        }
   }
-}
