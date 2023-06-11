@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/domain/const/const.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
+
+TextEditingController searchControllor = TextEditingController();
 
 class SearchResultWidget extends StatelessWidget {
   const SearchResultWidget({super.key});
@@ -31,14 +34,20 @@ class MainMovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return FutureBuilder(
+      builder: (context, snapshot) {
+      //String? imagepath=snapshot.data![index].posterPath;
+       if(snapshot.connectionState==ConnectionState.waiting){
+        return  Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(
-                "assets/johnwick.jpg",
-              ),
+              image: NetworkImage(""),
               fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(8)),
-    );
-  }
+          borderRadius: BorderRadius.circular(8))
+      );
+      }else{
+        return Center(child: CircularProgressIndicator());
+      }
+      });
+}
 }

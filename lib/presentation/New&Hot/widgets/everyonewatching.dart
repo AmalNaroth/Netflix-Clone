@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/home/widgets/custom_button.dart';
-import 'package:netflix/presentation/widgets/video_widget.dart';
 
 class EveryOnesWatchingWidget extends StatelessWidget {
-  const EveryOnesWatchingWidget({
+   EveryOnesWatchingWidget({
     super.key,
+    required this.index
   });
+  int index;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class EveryOnesWatchingWidget extends StatelessWidget {
         Text(
             "Landing the lead in the school musical is a dream come true jodi, until the pressure sens her confidence -- and her relationship -- in to a tail spin"),
         SizedBoxH50,
-        VideoWidget(),
+        //VideoWidget(index: index),
         SizedBoxH10,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

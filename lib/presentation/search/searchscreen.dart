@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/core/constants.dart';
+import 'package:netflix/notifier/valunotifier.dart';
 import 'package:netflix/presentation/search/widgets/search_idle.dart';
 import 'package:netflix/presentation/search/widgets/search_result.dart';
 
@@ -26,10 +27,12 @@ class SearchScreen extends StatelessWidget {
                 color: Colors.grey,
               ),
               style: const TextStyle(color: Colors.white),
+              onChanged: (value) {
+                searchScreenNotifier.notifyListeners();
+              },
             ),
             SizedBoxH10,
-            // Expanded(child: SearchIdleWidget()),
-            const Expanded(child: SearchResultWidget())
+            Expanded(child:searchControllor.text.isEmpty ? SearchIdleWidget() :SearchResultWidget())
           ],
         ),
       )),

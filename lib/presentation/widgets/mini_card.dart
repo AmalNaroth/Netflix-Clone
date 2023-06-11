@@ -11,10 +11,10 @@ class MainCard extends StatelessWidget {
   });
   int index;
    Future<List<dynamic>> Function()? showHomeMovies;
-    dynamic imagepath;
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
+
     return FutureBuilder(
         future:showHomeMovies!(),
         builder: (context, snapshot) {

@@ -15,7 +15,7 @@ class BackgroundCard extends StatelessWidget {
     return FutureBuilder(
       future: gettoptvshows(),
       builder: (context, snapshot) {
-        String? imagepath=snapshot.data?[19].posterPath;
+        String? imagepath=snapshot.data?[12].posterPath;
         return Stack(
         children: [
           Container(
