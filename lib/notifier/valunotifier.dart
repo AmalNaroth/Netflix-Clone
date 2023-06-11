@@ -1,2 +1,3 @@
 import 'package:flutter/cupertino.dart';
-ValueNotifier searchScreenNotifier = ValueNotifier([]);
+import 'package:netflix/domain/search/search.dart';
+ValueNotifier<List<Result>> searchScreenNotifier = ValueNotifier([]);

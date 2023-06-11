@@ -16,12 +16,13 @@ class BackgroundCard extends StatelessWidget {
       future: gettoptvshows(),
       builder: (context, snapshot) {
         String? imagepath=snapshot.data?[12].posterPath;
-        return Stack(
+        return (snapshot.data!=null && snapshot.data!.isNotEmpty ) ?
+        Stack(
         children: [
           Container(
             height: 600,
             decoration:  BoxDecoration(
-                color: Colors.red,
+                color: Colors.transparent,
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage("$baseurl$imagepath"))),
@@ -43,7 +44,7 @@ class BackgroundCard extends StatelessWidget {
             ),
           )
         ],
-      );
+      ): Center(child: CircularProgressIndicator(color: Colors.red,),);
       }
     );
   }

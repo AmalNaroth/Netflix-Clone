@@ -19,17 +19,21 @@ class MainCard extends StatelessWidget {
         future:showHomeMovies!(),
         builder: (context, snapshot) {
           String? imagepath = snapshot.data?[index].posterPath;
-          return Container(
-            margin: EdgeInsets.symmetric(horizontal: 5),
-            height: 250,
-            width: 150,
-            decoration: BoxDecoration(
-                color: Colors.red,
-                image: DecorationImage(
-                    image: NetworkImage('$baseurl$imagepath'),
-                    fit: BoxFit.cover),
-                borderRadius: ImageBorderRadious),
-          );
+          return (snapshot.data!=null && snapshot.data!.isNotEmpty) ? 
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Container(
+             // margin: EdgeInsets.symmetric(horizontal: 5),
+              height: 250,
+              width: 150,
+              decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  image: DecorationImage(
+                      image: NetworkImage('$baseurl$imagepath'),
+                      fit: BoxFit.cover),
+                  borderRadius: ImageBorderRadious),
+            ),
+          ): Center(child: CircularProgressIndicator(color: Colors.white,),);
         });
   }
 }

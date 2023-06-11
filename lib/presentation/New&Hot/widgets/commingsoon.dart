@@ -23,7 +23,8 @@ class CommingSoonWidget extends StatelessWidget {
         String? imagepath = snapshot.data?[index].backdropPath;
         String? titlepath = snapshot.data?[index].title;
         String? overView= snapshot.data?[index].overview;
-        return Row(
+        return (snapshot.data!=null && snapshot.data!.isNotEmpty) ? 
+        Row(
         children: [
           const SizedBox(
             width: 50,
@@ -102,7 +103,7 @@ class CommingSoonWidget extends StatelessWidget {
             ),
           )
         ],
-      );
+      ):Center(child: CircularProgressIndicator(),);
       }
     );
   }

@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                                       Row(
                                         children: [
                                           Image.asset(
-                                            "assets/netflixicon.png",
+                                            "assets/N-logo.png",
                                             height: 60,
                                           ),
                                           Spacer(),

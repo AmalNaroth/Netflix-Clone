@@ -6,10 +6,13 @@ class MainTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: const TextStyle(
-          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
+    return Padding(
+      padding: const EdgeInsets.only(left:10.0),
+      child: Text(
+        title,
+        style: const TextStyle(
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
+      ),
     );
   }
 }

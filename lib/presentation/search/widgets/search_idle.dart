@@ -7,7 +7,7 @@ import 'package:netflix/domain/search/search_functions.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
 
 class SearchIdleWidget extends StatelessWidget {
-  const SearchIdleWidget({super.key});
+   SearchIdleWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,11 +16,17 @@ class SearchIdleWidget extends StatelessWidget {
         const SearchTitle(title: "Top searches"),
         SizedBoxH10,
         Expanded(
-          child: ListView.separated(
-              shrinkWrap: true,
-              itemBuilder: (context, index) => TopSearchItemsTile(index: index),
-              separatorBuilder: (context, index) => SizedBoxH20,
-              itemCount: 10),
+          child: FutureBuilder(
+            future: getimageSearch() ,
+            builder:  (context, snapshot) {
+              return (snapshot.data!=null && snapshot.data!.isNotEmpty) ? ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, index) => TopSearchItemsTile(index: index),
+                separatorBuilder: (context, index) => SizedBoxH20,
+                itemCount: snapshot.data!.length):
+               const Center(child: CircularProgressIndicator(color: Colors.red,));
+            }
+          ),
         )
       ],
     );
@@ -37,9 +43,10 @@ class TopSearchItemsTile extends StatelessWidget {
     return FutureBuilder(
       future: getimageSearch(),
       builder: (context, snapshot) {
-        String? imagepath = snapshot.data![index].backdropPath;
-        String? movietitle = snapshot.data![index].title;
-        return Row(
+        String? imagepath = snapshot.data?[index].backdropPath;
+        String? movietitle = snapshot.data?[index].title;
+        return (snapshot.data!=null && snapshot.data!.isNotEmpty) ? 
+        Row(
         children: [
           Container(
             width: screenWidth * .35,
@@ -69,7 +76,7 @@ class TopSearchItemsTile extends StatelessWidget {
             ),
           )
         ],
-      );
+      ): Center(child: CircularProgressIndicator(),);
       }
     );
   }

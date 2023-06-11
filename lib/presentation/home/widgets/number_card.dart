@@ -14,7 +14,8 @@ class NumberCard extends StatelessWidget {
       future: gettoptvshows(),
       builder: (context, snapshot) {
         String? imagepath = snapshot.data?[index].posterPath;
-        return Stack(
+        return (snapshot.data!=null && snapshot.data!.isNotEmpty) ?
+        Stack(
         children: [
           Row(
             children: [
@@ -27,7 +28,7 @@ class NumberCard extends StatelessWidget {
                 height: 250,
                 width: 150,
                 decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.transparent,
                     image:  DecorationImage(
                         image: NetworkImage("$baseurl$imagepath"),
                         fit: BoxFit.cover),
@@ -51,7 +52,7 @@ class NumberCard extends StatelessWidget {
                     ),
                   ))),
         ],
-      );
+      ):const Center(child: CircularProgressIndicator(color: Colors.white,),);
       }
     );
   }
